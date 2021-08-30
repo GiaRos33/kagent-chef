@@ -76,7 +76,7 @@ end
 
 group node["kagent"]["group"] do
   action :create
-  default['kagent']['gid']
+  gid node['kagent']['gid']
   not_if "getent group #{node["kagent"]["group"]}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -100,7 +100,7 @@ end
 user node["kagent"]["user"] do
   gid node["kagent"]["group"]
   action :create
-  default['kagent']['uid']
+  uid node['kagent']['uid']
   manage_home true
   home node['kagent']['user-home']
   shell "/bin/bash"
