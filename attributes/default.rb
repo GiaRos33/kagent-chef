@@ -4,6 +4,8 @@ include_attribute "conda"
 default["kagent"]["version"]                       = node["install"]["version"]
 default["kagent"]["user"]                          = node["install"]["user"].empty? ? "kagent" : node["install"]["user"]
 default["kagent"]["group"]                         = node["install"]["user"].empty? ? "kagent" : node["install"]["user"]
+default['kagent']['uid']                           = "10060"
+default['kagent']['gid']                           = "10061"
 default["kagent"]["user-home"]                     = "/home/#{node["kagent"]["user"]}"
 
 default["kagent"]["certs_group"]                   = "certs"
