@@ -5,7 +5,7 @@ default["kagent"]["version"]                       = node["install"]["version"]
 default["kagent"]["user"]                          = node["install"]["user"].empty? ? "kagent" : node["install"]["user"]
 default["kagent"]["group"]                         = node["install"]["user"].empty? ? "kagent" : node["install"]["user"]
 default["kagent"]["user-home"]                     = "/home/#{node["kagent"]["user"]}"
-
+default['kagent']['gid']                           = "10061"
 default["kagent"]["certs_group"]                   = "certs"
 default["kagent"]["certs_user"]                    = "certs"
 
