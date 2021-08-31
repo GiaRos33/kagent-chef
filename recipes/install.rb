@@ -83,6 +83,7 @@ end
 
 group node["kagent"]["certs_group"] do
   action :create
+  gid node['certs_group']['gid']
   not_if "getent group #{node["kagent"]["certs_group"]}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -90,6 +91,7 @@ end
 user node["kagent"]["certs_user"] do
   gid node["kagent"]["certs_group"]
   action :create
+  uid node['certs_user']['uid']
   manage_home false
   system true
   shell "/bin/nologin"
