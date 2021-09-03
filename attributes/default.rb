@@ -8,6 +8,7 @@ default['kagent']['uid']                           = "10060"
 default['kagent']['gid']                           = "10061"
 default['certs_user']['uid']                       = "10080"
 default['certs_group']['gid']                      = "10081"
+default['userscerts_group']['gid']                 = "10062"
 default["kagent"]["user-home"]                     = "/home/#{node["kagent"]["user"]}"
 
 default["kagent"]["certs_group"]                   = "certs"
